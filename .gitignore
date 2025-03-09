@@ -1,0 +1,40 @@
+# Node.js dependencies
+node_modules/
+.yarn/
+
+# Yarn lock files
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# Build files
+dist/
+build/
+.cache/
+coverage/
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Docker
+docker-compose.override.yml
+*.pid
+logs/
+tmp/
