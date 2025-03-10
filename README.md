@@ -49,56 +49,6 @@ Frontend will be available at:
 Backend API runs at:
 - **http://localhost:3000**
 
-## API Endpoints
-### **Create a Purchase**
-```sh
-POST /payments/create
-```
-#### **Request Body:**
-```json
-{
-  "amount": 100,
-  "email": "test@example.com"
-}
-```
-#### **Response Example:**
-```json
-{
-  "purchase_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "checkout_url": "https://gate.libernetix.com/checkout"
-}
-```
-
-### **Process S2S Payment**
-```sh
-POST /payments/charge
-```
-#### **Request Body:**
-```json
-{
-  "purchase_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "card_number": "4444333322221111",
-  "expires": "01/25",
-  "cvc": "123",
-  "cardholder_name": "John Doe"
-}
-```
-#### **Response Example:**
-```json
-{
-  "status": "executed"
-}
-```
-
-### **Handling 3D Secure Payments**
-If the card is enrolled in **3D Secure**, the response will contain:
-```json
-{
-  "status": "3DS_required",
-  "URL": "https://bank.acs.com/redirect",
-  "PaReq": "encrypted-data",
-  "MD": "session-id"
-}
 ```
 ## Testing
 Use test cards:

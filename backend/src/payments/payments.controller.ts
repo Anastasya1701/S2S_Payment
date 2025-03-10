@@ -1,17 +1,21 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Get, Body } from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 
-@Controller('payments')
+@Controller('purchases')
 export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
+  @Get('/')
+  getRoot() {
+    return { message: 'API is running!' };
+  }
   @Post('/create')
-  async createPurchase(@Body() body: { amount: number; email: string }) {
-    return this.paymentsService.createPurchase(body.amount, body.email);
+  async createPurchase(@Body() body: any) {
+    return this.paymentsService.createPurchase(body);
   }
 
-  @Post('/charge')
-  async processPayment(@Body() body: { purchaseId: string; cardDetails: any }) {
-    return this.paymentsService.processPayment(body.purchaseId, body.cardDetails);
+  @Post('/direct_post_url')
+  async createDirectPostUrl(@Body() body: any) {
+    return this.paymentsService.createDirectPostUrl(body);
   }
 }
