@@ -12,11 +12,12 @@ This project provides a **Server-to-Server (S2S) payment integration** using **N
 ### 2. Set up environment variables
 Create a `.env` file inside `backend/` (already provided in this repo):
 ```sh
-API_URL=https://gate.libernetix.com/api/v1
-BRAND_ID=77ede2ab-d039-4894-8913-6acf29551825
-API_KEY=your_api_key_here
-S2S_TOKEN=your_s2s_token_here
-PORT=3000
+API_URL=
+BRAND_ID=
+API_KEY=
+S2S_TOKEN=
+DATABASE_URL=postgres://checkout_user:checkout_password@checkout-db:5432/checkout_db
+PORT=4000
 ```
 
 ### 3. Running with Docker Compose
@@ -44,10 +45,10 @@ yarn dev:frontend
 ```
 ### 5. Open in Browser
 Frontend will be available at:
-- **http://localhost:3001**
+- **http://localhost:3000**
 
 Backend API runs at:
-- **http://localhost:3000**
+- **http://localhost:4000**
 
 ```
 ## Testing
